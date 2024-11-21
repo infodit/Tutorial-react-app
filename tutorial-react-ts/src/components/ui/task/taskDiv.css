@@ -1,0 +1,15 @@
+.Task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    width: 300px;
+    padding: 1rem;
+    div {
+        margin-left: 1rem;
+        label {
+            margin-left: 2rem;
+        }
+    }
+}
