@@ -1,10 +1,5 @@
-import './task.css'
-
-export type Task = {
-    id: string
-    name: string
-    completed: boolean
-}
+import { Task } from '../../factories/task'
+import './taskDiv.css'
 
 function TaskDiv(props: Task) {
     return (

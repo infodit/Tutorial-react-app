@@ -1,9 +1,20 @@
 import './App.css'
-import Task from './components/ui/task/taskDiv'
+import TaskListUI from './components/ui/taskList/taskList'
 
 function App() {
   return (
-    <Task id={'0'} name={'Eat'} completed={false} />
+    <TaskListUI tasks={[
+      {
+        id: 'task-0',
+        name: 'Go to School',
+        completed: false
+      },
+      {
+        id: 'task-1',
+        name: 'Launch',
+        completed: false
+      }
+    ]} />
   )
 }
 
