@@ -7,7 +7,7 @@ function TaskDiv(props: Task) {
             <div>
                 <input type="checkbox" name={props.name} id={props.id}
                     />
-                <label htmlFor="">{props.name}</label>
+                <label htmlFor={props.id}>{props.name}</label>
             </div>
             <div>
                 <button>
