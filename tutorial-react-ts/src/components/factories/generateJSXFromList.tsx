@@ -1,14 +1,17 @@
-import { TaskList } from "../factories/taskList"
-import TaskDiv from "../ui/task/taskDiv"
+import { TaskList } from "../../types/taskList"
+import TaskDiv from "../ui/taskDiv/taskDiv"
+import { useTaskListFucntions } from "../../hooks/useTaskListFunctions"
 
+export function GenerateJSXFromList(tasklist: TaskList) {
+    const { tasks,addTask, deleteTask, toggleTaskCompleted } = useTaskListFucntions(tasklist)
 
-
-
-export function GenerateTSXFromList(tasks: TaskList) {
     return tasks.map((task) => (
         <TaskDiv
-        id={task.id}
-        name={task.name}
-        completed={task.completed} />
+            task={task}
+            key={task.id}
+            deleteTask={deleteTask}
+            addTask={addTask}
+            toggleTaskCompleted={toggleTaskCompleted}
+        />
     ))
 }

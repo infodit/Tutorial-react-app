@@ -1,15 +1,18 @@
-import { GenerateTSXFromList } from "../../factories/generateJSXFromList"
-import { TaskList } from "../../factories/taskList"
+// import { GenerateTSXFromList } from "../../factories/generateJSXFromList"
+import { GenerateJSXFromList } from "../../factories/generateJSXFromList"
+import { TaskList } from "../../../types/taskList"
+import './taskList.css'
 
-export type TaskListUI = {
+export type TaskListUIProps = {
     tasks:TaskList
 }
 
-function TaskListUI(taskList: TaskListUI) {
-    const TaskListTSX = GenerateTSXFromList(taskList.tasks)
+function TaskListUI(taskList: TaskListUIProps) {
+    const TaskListTSX = GenerateJSXFromList(taskList.tasks)
+    
     
     return (
-        <div>
+        <div id="taskListUI">
             {TaskListTSX}
         </div>
     )
