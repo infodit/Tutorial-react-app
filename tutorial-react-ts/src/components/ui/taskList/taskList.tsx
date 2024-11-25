@@ -1,11 +1,6 @@
-// import { GenerateTSXFromList } from "../../factories/generateJSXFromList"
 import { GenerateJSXFromList } from "../../factories/generateJSXFromList"
-import { TaskList } from "../../../types/taskList"
 import './taskList.css'
-
-export type TaskListUIProps = {
-    tasks:TaskList
-}
+import { TaskListUIProps } from "../../../types/TaskListUIProps"
 
 function TaskListUI(taskList: TaskListUIProps) {
     const TaskListTSX = GenerateJSXFromList(taskList.tasks)
