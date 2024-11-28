@@ -1,17 +1,17 @@
+import { useTaskListFunctions } from "../../hooks/useTaskListFunctions"
 import { TaskList } from "../../types/taskList"
 import TaskDiv from "../ui/taskDiv/taskDiv"
-import { useTaskListFucntions } from "../../hooks/useTaskListFunctions"
+
 
 export function GenerateJSXFromList(tasklist: TaskList) {
-    const { tasks,addTask, deleteTask, toggleTaskCompleted } = useTaskListFucntions(tasklist)
+    const ts = useTaskListFunctions(tasklist)
 
-    return tasks.map((task) => (
+    return ts.tasks.map((task) => (
         <TaskDiv
             task={task}
             key={task.id}
-            deleteTask={deleteTask}
-            addTask={addTask}
-            toggleTaskCompleted={toggleTaskCompleted}
+            deleteTask={ts.deleteTask}
+            toggleTaskCompleted={ts.toggleTaskCompleted}
         />
     ))
 }

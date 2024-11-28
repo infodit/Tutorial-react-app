@@ -1,5 +1,5 @@
 import './App.css'
-import taskList_init from './types/taskList'
+import taskList_init from './components/taskList_init'
 import TaskListUI from './components/ui/taskList/taskList'
 
 
