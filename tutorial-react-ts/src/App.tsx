@@ -1,12 +1,11 @@
 import './App.css'
-import taskList_init from './components/taskList_init'
-import TaskListUI from './components/ui/taskList/taskList'
+import ToDoApp from './components/ui/toDoApp/todoApp'
 
 
 function App() {
 
   return (
-    <TaskListUI tasks={taskList_init} />
+    <ToDoApp />
   )
 }
 

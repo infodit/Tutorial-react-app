@@ -1,0 +1,5 @@
+#todoApp {
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px lightblue, -1px -1px 1px lightblue ;
+}

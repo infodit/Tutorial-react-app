@@ -1,4 +1,4 @@
-import { TaskDivProps } from '../../../types/taskDivProps'
+import { TaskDivProps } from '../../../../types/taskDivProps'
 import './taskDiv.css'
 
 function TaskDiv(props: TaskDivProps) {

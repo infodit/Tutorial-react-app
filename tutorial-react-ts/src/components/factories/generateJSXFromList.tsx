@@ -1,6 +1,6 @@
 import { useTaskListFunctions } from "../../hooks/useTaskListFunctions"
 import { TaskList } from "../../types/taskList"
-import TaskDiv from "../ui/taskDiv/taskDiv"
+import TaskDiv from "../ui/toDoApp/taskDiv/taskDiv"
 
 
 export function GenerateJSXFromList(tasklist: TaskList) {
