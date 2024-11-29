@@ -1,17 +1,17 @@
-import { useTaskListFunctions } from "../../hooks/useTaskListFunctions"
-import { TaskList } from "../../types/taskList"
+import { useContext } from "react"
 import TaskDiv from "../ui/toDoApp/taskDiv/taskDiv"
+import TaskContext from "../context/taskContext"
 
 
-export function GenerateJSXFromList(tasklist: TaskList) {
-    const ts = useTaskListFunctions(tasklist)
+export function GenerateJSXFromList() {
+    const {tasks,deleteTask,toggleTaskCompleted} = useContext(TaskContext)
 
-    return ts.tasks.map((task) => (
+    return tasks.map((task) => (
         <TaskDiv
             task={task}
             key={task.id}
-            deleteTask={ts.deleteTask}
-            toggleTaskCompleted={ts.toggleTaskCompleted}
+            deleteTask={deleteTask}
+            toggleTaskCompleted={toggleTaskCompleted}
         />
     ))
 }

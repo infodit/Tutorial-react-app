@@ -1,0 +1,22 @@
+#taskForm {
+    margin: 2rem;
+    form {
+        display: flex;
+        justify-content: space-between;
+
+        input {
+            border: 1px solid lightblue;
+            margin-right: 0.5rem;
+            width: 90%;
+            border-radius: 5px;
+        }
+
+        input:hover {
+            background-color: aliceblue;
+        }
+        
+        input:focus {
+            outline: none;
+        }
+    }
+}

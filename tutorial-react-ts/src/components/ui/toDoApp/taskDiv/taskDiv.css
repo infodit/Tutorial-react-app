@@ -6,7 +6,6 @@
     width: 350px;
     padding: 0.5rem;
     div {
-        margin-left: 1rem;
         label {
             margin-left: 2rem;
         }
@@ -14,6 +13,5 @@
 }
 
 .Task:hover {
-    
     background-color: aliceblue;
 }

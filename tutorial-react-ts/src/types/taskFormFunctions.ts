@@ -1,6 +1,6 @@
-import { Task } from "./task";
 
 export type TaskFormFunctions = {
-    tasks: Task[];
-    addTask: (name: string) => void;
+    name: string;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 };

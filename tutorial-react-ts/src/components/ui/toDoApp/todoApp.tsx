@@ -1,20 +1,17 @@
-import taskList_init from "../../taskList_init"
+import TaskProvider from "../../provider/taskProvider"
+import TaskForm from "./taskForm/taskForm"
 import TaskListUI from "./taskList/taskList"
 import './todoApp.css'
 
 function ToDoApp() {
 
-    //Implements get list exist
-
-    //Initialized default tasklist 
-    const taskList = taskList_init
-
-
-
     return (
-        <div id="todoApp">
-            <TaskListUI tasks={taskList} />
-        </div>
+        <TaskProvider>
+            <div id="todoApp">
+                <TaskForm />
+                <TaskListUI />
+            </div>
+        </TaskProvider>
     )
 }
 
