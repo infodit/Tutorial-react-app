@@ -14,6 +14,7 @@ function TaskForm() {
                     id="task_input"
                     value={name}
                     onChange={handleChange}
+                    required
                 />
                 <button type="submit">Add</button>
             </form>

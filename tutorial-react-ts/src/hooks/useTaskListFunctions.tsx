@@ -10,20 +10,20 @@ export function useTaskListFunctions(): TaskListFunctions {
     const [CounterId, setCounterId] = useState<number>(taskList_init.length);
 
     const addTask = (name: string) => {
-        setTasks((prevTasks) => [
-            ...prevTasks,
+        setTasks((currentTasks) => [
+            ...currentTasks,
             { id: `task-${CounterId}`, name, completed: false },
         ]);
         setCounterId(CounterId + 1)
     };
 
     const deleteTask = (id: string) => {
-        setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+        setTasks((currentTasks) => currentTasks.filter((task) => task.id !== id));
     };
 
     const toggleTaskCompleted = (id: string) => {
-        setTasks((prevTasks) =>
-            prevTasks.map((task) =>
+        setTasks((currentTasks) =>
+            currentTasks.map((task) =>
                 task.id === id ? { ...task, completed: !task.completed } : task
             )
         );
