@@ -4,13 +4,14 @@ import TaskContext from "../context/taskContext"
 
 
 export function GenerateJSXFromList() {
-    const {tasks,deleteTask,toggleTaskCompleted} = useContext(TaskContext)
+    const {tasks,deleteTask,editTask,toggleTaskCompleted} = useContext(TaskContext)
 
     return tasks.map((task) => (
         <TaskDiv
             task={task}
             key={task.id}
             deleteTask={deleteTask}
+            editTask={editTask}
             toggleTaskCompleted={toggleTaskCompleted}
         />
     ))

@@ -29,11 +29,19 @@ export function useTaskListFunctions(): TaskListFunctions {
         );
     };
 
+    const editTask = (id: string, newName: string) => {
+        const updatedTasks = tasks.map((task) =>
+            task.id === id ? { ...task, name: newName } : task
+        );
+        setTasks(updatedTasks)
+    }
+
     // Return the tasks and the functions to manipulate the task list
     return {
         tasks,              // Current list of tasks  
-        addTask,        
+        addTask,            // Function to add a task
         deleteTask,         // Function to delete a task
+        editTask,           // Function to edit a task
         toggleTaskCompleted // Function to toggle a task's completion status
     };
 }

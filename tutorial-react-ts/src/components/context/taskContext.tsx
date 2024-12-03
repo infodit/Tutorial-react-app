@@ -6,6 +6,7 @@ const TaskContext = createContext<TaskContextProps>(
         tasks: [],
         addTask: () => {},
         deleteTask: () => {},
+        editTask: () => {},
         toggleTaskCompleted: () => {}
     }
 )
