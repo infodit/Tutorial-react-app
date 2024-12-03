@@ -22,11 +22,16 @@ export function useTaskListFunctions(): TaskListFunctions {
     };
 
     const toggleTaskCompleted = (id: string) => {
-        setTasks((currentTasks) =>
-            currentTasks.map((task) =>
-                task.id === id ? { ...task, completed: !task.completed } : task
-            )
-        );
+        const updatedTasks = tasks.map((task) => {
+            // if this task has the same ID as the edited task
+            if (id === task.id) {
+              // use object spread to make a new object
+              // whose `completed` prop has been inverted
+              return { ...task, completed: !task.completed };
+            }
+            return task;
+          });
+          setTasks(updatedTasks);
     };
 
     const editTask = (id: string, newName: string) => {

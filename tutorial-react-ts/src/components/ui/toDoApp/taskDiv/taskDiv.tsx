@@ -13,8 +13,11 @@ function TaskDiv(props: TaskDivProps) {
     return (
         <div className="Task">
             <div>
-                <input type="checkbox" name={props.task.name} id={props.task.id} onChange={() => props.toggleTaskCompleted}
-                />
+                <input 
+                type="checkbox"  
+                id={props.task.id} 
+                onChange={() => props.toggleTaskCompleted(props.task.id)}
+                defaultChecked={props.task.completed}/>
             </div>
             {isEditing ? templates.editingTemplate : templates.viewedTemplate}
             <div>
