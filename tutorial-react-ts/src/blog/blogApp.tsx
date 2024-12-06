@@ -1,5 +1,3 @@
-
-
 import { PostType } from "./definitions/PostType";
 import PostItem from "./ui/PostItem";
 import usePostData from "./hooks/usePostData";
