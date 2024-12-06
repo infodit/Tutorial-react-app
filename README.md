@@ -7,8 +7,9 @@ Each branch contains a project. After selecting a branch, install the dependenci
 ```bash
 cd tutorial-react-ts
 npm install
-
+```
 The, start the app with:
 
 ```bash
 npm run dev
+```
