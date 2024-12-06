@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { TaskFormFunctions } from "../types/taskFormFunctions";
-import TaskContext from "../components/context/taskContext";
+import { useTaskListFunctions } from "./useTaskListFunctions";
 
 export function useTaskFormFunctions():TaskFormFunctions {
     
-    const {addTask} = useContext(TaskContext)
+    const {addTask} = useTaskListFunctions()
     const [name, setName] = useState("");
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

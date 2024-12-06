@@ -1,13 +1,11 @@
+import { Dispatch } from "react"
+import { TaskAction } from "../components/constants/taskConst"
+import { Task } from "./task"
 import { FilterTaskKey } from "./taskFilterProps"
-import { TaskList } from "./taskList"
 
 export type TaskContextProps = {
-    tasks:TaskList,
+    tasks:Task[],
     filter:FilterTaskKey,
-    setFilter: React.Dispatch<React.SetStateAction<FilterTaskKey>>;
-    // filter_functions:TaskFilterPros
-    addTask:(name:string) =>  void
-    deleteTask:(id:string) =>  void
-    editTask: (id: string, newName:string) => void
-    toggleTaskCompleted:(id:string) =>  void
+    setFilter:React.Dispatch<React.SetStateAction<FilterTaskKey>>
+    taskDispatch:Dispatch<TaskAction> 
 }

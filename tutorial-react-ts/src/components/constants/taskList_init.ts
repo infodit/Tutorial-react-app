@@ -1,7 +1,7 @@
-import { TaskList } from "../types/taskList";
+import { Task } from "../../types/task";
 
 
-const taskList_init: TaskList = [
+const taskList_init: Task[] = [
     {
         id: "task-0",
         name: "Breakfast",

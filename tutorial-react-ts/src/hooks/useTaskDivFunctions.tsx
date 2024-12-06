@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import TaskContext from "../components/context/taskContext";
+import { useState } from "react";
 import { TaskDivProps } from "../types/taskDivProps";
+import { useTaskListFunctions } from "./useTaskListFunctions";
 
-function useTaskDivFunctions(props:TaskDivProps): { isEditing: boolean; newName: string; handleBlur: () => void; handleNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void; setEditing: React.Dispatch<React.SetStateAction<boolean>> } {
-    const { editTask } = useContext(TaskContext)
+export function useTaskDivFunctions(props:TaskDivProps) {
+    const { editTask } = useTaskListFunctions()
 
     const [isEditing, setEditing] = useState(false)
     const [newName, setNewName] = useState(props.task.name)
@@ -24,5 +24,3 @@ function useTaskDivFunctions(props:TaskDivProps): { isEditing: boolean; newName:
         setEditing
     }
 }
-
-export default useTaskDivFunctions

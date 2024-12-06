@@ -1,6 +1,6 @@
 import { TaskDivProps } from '../../../../types/taskDivProps'
 import './taskDiv.css'
-import useTaskDivFunctions from '../../../../hooks/useTaskDivFunctions';
+import {useTaskDivFunctions} from '../../../../hooks/useTaskDivFunctions';
 import TaskDivTemplate from './taskDivTemplate';
 
 

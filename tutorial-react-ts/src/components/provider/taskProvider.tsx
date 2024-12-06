@@ -1,14 +1,13 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useReducer, useState } from "react";
 import TaskContext from "../context/taskContext";
-import { useTaskListFunctions } from "../../hooks/useTaskListFunctions";
-import useTaskFilterFunctions from "../../hooks/useTaskFilterFunctions";
+import { TaskReducer } from "../reducer/taskReducer";
+import taskList_init from "../constants/taskList_init";
+import { FilterTaskKey } from "../../types/taskFilterProps";
 
 function TaskProvider({ children }: { children: ReactNode }) {
 
-    const {tasks,addTask,deleteTask,editTask,toggleTaskCompleted} = useTaskListFunctions()
-
-    const {filter,setFilter} = useTaskFilterFunctions()
- 
+    const [tasks,taskDispatch] = useReducer(TaskReducer,taskList_init)
+    const [filter,setFilter] = useState<FilterTaskKey>('All')
     useEffect(() => {
         console.log(tasks);
     },[tasks])
@@ -17,9 +16,7 @@ function TaskProvider({ children }: { children: ReactNode }) {
         <TaskContext.Provider
             value={
                 { 
-                    tasks,filter,                                             //Properties
-                    setFilter,                                     //Filter Functions
-                    addTask, deleteTask, editTask,toggleTaskCompleted         //Task Functions
+                    tasks,filter,setFilter,taskDispatch
                 }
             }>
             {children}
