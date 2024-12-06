@@ -1,30 +1,10 @@
 import { PostType } from "./definitions/PostType";
 import PostItem from "./ui/PostItem";
-import usePostData from "./hooks/usePostData";
+import useHandlePost from "./hooks/useHandlePost";
 
 function BlogApp() {
 
-    const { posts, postFunctions } = usePostData()
-
-    const handleAddPost = () => {
-        const newPost = {
-            title: 'Titolo',
-            userId: 1,
-            body: 'Paragrafo inserito'
-        }
-        postFunctions.AddPost(newPost)
-    }
-
-    const handleUpdate = (id: number) => {
-        postFunctions.UpdatePost(id, {
-            title: 'Nuovo Titolo',
-            body: 'Contenuto aggiornato'
-        })
-    }
-
-    const handleDelete = (id: number) => {
-        postFunctions.DeletePost(id)
-    }
+    const { posts, handleUpdate, handleDelete, handleAddPost } = useHandlePost();
 
     return (
         <div style={{ width: 600 }}>

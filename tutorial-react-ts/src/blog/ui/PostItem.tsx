@@ -1,10 +1,8 @@
-import { PostItemProps } from "./PostItemProps";
+import { PostItemProps } from "../definitions/PostItemProps";
 
 export function PostItem(props: PostItemProps) {
 
-    const post = props.post;
-    const handleUpdate = props.handleUpdate;
-    const handleDelete = props.handleDelete;
+    const {post, handleUpdate, handleDelete} = props;
 
     return (
         <div key={post.id} id={post.id.toString()}>
