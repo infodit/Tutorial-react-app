@@ -1,37 +1,30 @@
 import { ChangeEventHandler, SetStateAction } from "react";
 
 function TaskDivTemplate(
-    taskName:string,
-    newName: string,
-    handleNameChange: ChangeEventHandler<HTMLInputElement>, 
+    taskName: string,
+    _newName: string,
+    handleNameChange: ChangeEventHandler<HTMLDivElement>,
     handleBlur: () => void,
-    setEditing: (value: SetStateAction<boolean>) => void 
-)
-    {
+    setEditing: (value: SetStateAction<boolean>) => void
+) {
+
     const editingTemplate = (
-        <input className='inputEditingName'
-            type="text"
-            value={newName}
-            onChange={handleNameChange}
+        <div
+            contentEditable
+            suppressContentEditableWarning
+            onInput={handleNameChange}
             onBlur={handleBlur}
-            autoFocus />
+            style={{
+                border: '1px solid #ccc',
+                padding: '10px',
+                minHeight: '40px',
+                backgroundColor: '#f9f9f9',
+              }}
+        >{taskName}</div>
     );
 
-    // const editingTemplate = (
-    //     <div className='editableDiv'
-    //         contentEditable
-    //         suppressContentEditableWarning
-    //         style={{border: isEditing ? 'none': 'none'}}
-    //         onInput={handleNameChange}
-    //         onBlur={handleBlur}
-    //         autoFocus
-    //     >
-    //         {props.task.name}
-    //     </div>
-    // )
     const viewedTemplate = (
         <div onClick={() => setEditing(true)}>{taskName}</div>
-        // <label htmlFor={props.task.id} onClick={()=> setEditing(true)}>{props.task.name}</label>
     );
     return { editingTemplate, viewedTemplate };
 }
